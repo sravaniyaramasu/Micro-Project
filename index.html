@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>House Price Prediction</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href="{{ url_for('static', filename='css/main.css') }}">
+    <script src='main.js'></script>
+</head>
+
+<body>
+    <div class="register_page">
+        <div class="form">
+            <form action="{{url_for('predict')}}" method="POST">
+                Bedrooms: <input type="number" name='bedrooms' placeholder="Enter the no of Bedrooms"><br>
+                Bathrooms: <input type="number" name='bathrooms' placeholder="Enter the no of Bathrooms"><br>
+                Floors: <input type="number" name='floors' placeholder="Enter the no of Floors"><br>
+                Year of Build: <input type="number" name='yr_built' placeholder="Enter year of Build"><br>
+                Sqft Living: <input type="number" name='sqft_living' placeholder="Enter sqft Living"><br>
+                Sqft Lot: <input type="number" name='sqft_lot' placeholder="Enter sqft Lot"><br>
+                Waterfront: <input type="number" name='waterfront' placeholder="Enter Waterfront (0 or 1)"><br>
+                View: <input type="number" name='view' placeholder="Enter View"><br>
+                Condition: <input type="number" name='condition' placeholder="Enter Condition"><br>
+                Grade: <input type="number" name='grade' placeholder="Enter Grade"><br>
+                Sqft Above: <input type="number" name='sqft_above' placeholder="Enter sqft Above"><br>
+                Sqft Basement: <input type="number" name='sqft_basement' placeholder="Enter sqft Basement"><br>
+                Year of Renovation: <input type="number" name='yr_renovated' placeholder="Enter year of Renovation"><br>
+                Zipcode: <input type="number" name='zipcode' placeholder="Enter Zipcode"><br>
+                Latitude: <input type="number" name='lat' placeholder="Enter Latitude"><br>
+                Longitude: <input type="number" name='long' placeholder="Enter Longitude"><br>
+                Sqft Living15: <input type="number" name='sqft_living15' placeholder="Enter sqft Living15"><br>
+                Sqft Lot15: <input type="number" name='sqft_lot15' placeholder="Enter sqft Lot15"><br>
+                <input type="submit" value="predict" class="submit">
+            </form>
+            <p>House Price is: {{data}}</p>
+        </div>
+    </div>
+</body>
+
+</html>
